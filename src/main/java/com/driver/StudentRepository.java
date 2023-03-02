@@ -75,10 +75,10 @@ public class StudentRepository {
             deleteTeacherfromStudent(TeacherName);
         }
     }
-    public void deleteallteacher(String TeacherName){
-        List<String> delteacher = getStudentbyTeacher(TeacherName);
+    public void deleteallteacher(){
+        List<String> delteacher = new ArrayList<>();
         for(String s:teacherHashMap.keySet()){
-            delteacher.addAll(getStudentbyTeacher(TeacherName));
+            delteacher.addAll(getStudentbyTeacher(s));
         }
         teacherHashMap.clear();
         teacherandStudent.clear();
